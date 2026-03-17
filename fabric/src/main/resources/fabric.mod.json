@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "dynamicblockregen",
+  "version": "${version}",
+  "name": "Dynamic Block Regen",
+  "description": "Server utility mod providing configurable regenerating resources.",
+  "authors": [
+    "Jaypixl7"
+  ],
+  "contact": {
+    "homepage": "https://github.com/JayPixl/dynamicblockregen",
+    "sources": "https://github.com/JayPixl/dynamicblockregen"
+  },
+  "license": "MIT",
+  "icon": "assets/dynamicblockregen/icon.png",
+  "environment": "server",
+  "entrypoints": {
+    "main": [
+      "io.jaypixl.dynamicblockregen.fabric.DBRModFabric"
+    ]
+  },
+  "mixins": [
+    "dynamicblockregen.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.18.4",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
