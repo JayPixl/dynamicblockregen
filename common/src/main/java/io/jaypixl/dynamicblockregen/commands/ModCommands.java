@@ -125,13 +125,13 @@ public class ModCommands {
                                     return 1;
                                 })
                         )
-                        .then(Commands.literal("listpools")
+                        .then(Commands.literal("pools")
                                 .executes(ctx -> {
 
                                     var pools = RegenPools.getAll();
 
                                     ctx.getSource().sendSuccess(
-                                            () -> Component.literal("Loaded pools: " + pools.keySet()),
+                                            () -> Component.literal("Current pools: " + pools.keySet()),
                                             false
                                     );
 
