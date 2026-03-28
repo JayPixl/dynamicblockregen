@@ -1,0 +1,25 @@
+{
+  "config": {},
+  "entries": [
+    {
+      "weight": 10,
+      "block": "minecraft:stone",
+      "regen_time": [20, 30]
+    },
+    {
+      "weight": 5,
+      "block": "minecraft:cobblestone",
+      "regen_time": [20, 30]
+    },
+    {
+      "weight": 3,
+      "block": "minecraft:coal_ore",
+      "regen_time": [40, 60]
+    },
+    {
+      "weight": 1,
+      "block": "minecraft:iron_ore",
+      "regen_time": [50, 80]
+    }
+  ]
+}

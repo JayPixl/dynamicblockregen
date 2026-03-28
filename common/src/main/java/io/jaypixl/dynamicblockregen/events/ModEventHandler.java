@@ -14,6 +14,9 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Blocks;
 
+import java.util.function.Consumer;
+import java.util.function.Function;
+
 public class ModEventHandler {
     public static void handleServerStarted(MinecraftServer server) {
         RegenPools.refreshPools(server);
@@ -32,7 +35,7 @@ public class ModEventHandler {
         RegenScheduler.regen(level, pos, pool);
     }
 
-    public static void handleUseItem(ServerLevel level, BlockPos pos, ServerPlayer player, ItemStack stack) {
+    public static void handleUseItem(ServerLevel level, BlockPos pos, ServerPlayer player, ItemStack stack, Runnable cancel) {
 
         String pool = RegenWandUtil.getPool(stack);
         if (pool == null) return;

@@ -1,6 +1,6 @@
 # ♻ Dynamic Block Regen
 
-A data-driven Minecraft mod that lets blocks regenerate over time using customizable loot-style pools.
+A data-driven server utility mod that lets blocks regenerate over time using customizable loot-style pools.
 
 **Perfect for:**
 - Regenerating ores or wood
@@ -59,22 +59,22 @@ Gives you a Regen Marker Wand for chosen pool. Right click on blocks to add or r
 
 Sets the wand in your hand to chosen pool.
 
-`/dbr refresh`
+`/dbr pools refresh`
 
 Checks for any blocks that do not match the pool assigned to them and restarts their regeneration.
 
-`/dbr restart`
+`/dbr pools restart`
 
 Forces all blocks to regenerate.
 
-`/dbr pools`
+`/dbr pools list`
 
 Lists out all pools currently active.
 
-`/dbr listblocks <pool>`
+`/dbr pools blocks <pool>`
 
 Lists all block locations for the chosen pool.
 
-`/dbr clearpool`
+`/dbr pools clear <pool>`
 
 Clears all blocks from the chosen pool.

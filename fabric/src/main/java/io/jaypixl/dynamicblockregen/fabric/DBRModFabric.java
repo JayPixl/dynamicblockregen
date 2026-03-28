@@ -19,6 +19,8 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.world.InteractionResult;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 public final class DBRModFabric implements ModInitializer {
     @Override
     public void onInitialize() {
@@ -37,14 +39,20 @@ public final class DBRModFabric implements ModInitializer {
             if (!(player instanceof ServerPlayer serverPlayer))
                 return InteractionResult.PASS;
 
+            AtomicBoolean cancelled = new AtomicBoolean(false);
+
             ModEventHandler.handleUseItem(
                     level,
                     hitResult.getBlockPos(),
                     serverPlayer,
-                    player.getItemInHand(hand)
+                    player.getItemInHand(hand),
+                    () -> { cancelled.set(true); }
             );
-
-            return InteractionResult.PASS;
+            if (cancelled.get()) {
+                return InteractionResult.SUCCESS_NO_ITEM_USED;
+            } else {
+                return InteractionResult.PASS;
+            }
         });
 
         // Commands

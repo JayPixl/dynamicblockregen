@@ -59,7 +59,7 @@ public class ModEventsNeoForge {
         if (!(event.getEntity() instanceof ServerPlayer player))
             return;
 
-        ModEventHandler.handleUseItem(level, event.getPos(), player, event.getItemStack());
+        ModEventHandler.handleUseItem(level, event.getPos(), player, event.getItemStack(), () -> event.setCanceled(true));
     }
 
     @SubscribeEvent
