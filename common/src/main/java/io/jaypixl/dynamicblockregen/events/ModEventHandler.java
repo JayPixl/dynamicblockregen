@@ -64,5 +64,7 @@ public class ModEventHandler {
                     Component.literal("Added position " + pos + " to pool " + pool)
             );
         }
+
+        cancel.run();
     }
 }
